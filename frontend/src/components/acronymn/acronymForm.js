@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 function acronymForm() {
   const [text, setText] = useState("");
 
-  handleChange = () => {
+  const handleChange = e => {
     setText(e.target.value);
   };
 
   return (
     <div>
-      <input type="text" value={text} onChange={this.handleChange} />
+      <input type="text" value={text} onChange={handleChange} />
       <input type="submit" />
     </div>
   );
