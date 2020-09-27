@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-function acronymForm() {
-  const [text, setText] = useState("");
+// const acronymForm = () => {
+//   const [text, setText] = useState("");
 
-  const handleChange = e => {
-    setText(e.target.value);
-  };
+//   const handleChange = e => {
+//     setText(e.target.value);
+//   };
 
-  return (
-    <div>
-      <input type="text" value={text} onChange={handleChange} />
-      <input type="submit" />
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <input type="text" value={text} onChange={handleChange} />
+//       <input type="submit" />
+//     </div>
+//   );
+// };
 
-export default acronymForm;
+// export default acronymForm;

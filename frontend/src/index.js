@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowswerRouter as Router, Switch, Route } from "react-dom";
 
 ReactDOM.render(
   <React.StrictMode>
