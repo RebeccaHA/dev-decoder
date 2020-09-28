@@ -1,18 +1,46 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// const acronymForm = () => {
-//   const [text, setText] = useState("");
+const AcronymForm = () => {
+  const [acronymName, setAcronymName] = useState("");
+  const [definition, setDefinition] = useState("");
+  const [description, setDescription] = useState("");
 
-//   const handleChange = e => {
-//     setText(e.target.value);
-//   };
+  const handleChangeAcronymn = e => {
+    setAcronymName(e.target.value);
+  };
+  const handleChangeDescription = e => {
+    setDescription(e.target.value);
+  };
+  const handleChangeDefinition = e => {
+    setDefinition(e.target.value);
+  };
 
-//   return (
-//     <div>
-//       <input type="text" value={text} onChange={handleChange} />
-//       <input type="submit" />
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <input
+        type="acronymName"
+        value={acronymName}
+        onChange={handleChangeAcronymn}
+      />
+      <br />
+      <input
+        type="definition"
+        value={definition}
+        onChange={handleChangeDefinition}
+      />
+      <br />
+      <textarea
+        type="description"
+        value={description}
+        onChange={handleChangeDescription}
+      />
+      <br />
+      <input type="submit" />
+      <h1>{acronymName}</h1>
+      <h1>{definition}</h1>
+      <h1>{description}</h1>
+    </div>
+  );
+};
 
-// export default acronymForm;
+export default AcronymForm;

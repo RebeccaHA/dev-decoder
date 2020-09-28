@@ -1,19 +1,20 @@
 import React from "react";
-import { BrowswerRouter as Router, Switch, Route } from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-// import acronymForm from "./components/acronymn/acronymForm";
-import home from "./components/home";
+import AcronymForm from "./components/acronymn/AcronymForm";
+import Home from "./components/Home";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <div>
-        <Route exact path="/" component={home} />
-        {/* <Route exact path="/new" component={acronymForm} /> */}
+        <h1>test</h1>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/new" component={AcronymForm} />
         {/* <Route exact path="/acronyms" component={acronymContainer} /> */}
       </div>
     </Router>
   );
-}
+};
 
 export default App;
