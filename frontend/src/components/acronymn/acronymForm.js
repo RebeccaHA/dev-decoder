@@ -1,46 +1,53 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addAcronym } from "../../redux/actions";
 
-const AcronymForm = () => {
-  const [acronymName, setAcronymName] = useState("");
-  const [definition, setDefinition] = useState("");
-  const [description, setDescription] = useState("");
+const AcronymForm = props => {
+  const [state, setState] = useState({
+    acronymName: "",
+    definition: "",
+    description: ""
+  });
 
-  const handleChangeAcronymn = e => {
-    setAcronymName(e.target.value);
+  const handleSetFormData = e => {
+    setState({ ...state, [e.target.name]: e.target.value });
   };
-  const handleChangeDescription = e => {
-    setDescription(e.target.value);
-  };
-  const handleChangeDefinition = e => {
-    setDefinition(e.target.value);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.addAcronym(state);
+    setState({ acronymName: "", definition: "", description: "" });
   };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
-        type="acronymName"
-        value={acronymName}
-        onChange={handleChangeAcronymn}
+        type="text"
+        value={state.acronymName}
+        onChange={handleSetFormData}
+        name="acronymName"
       />
       <br />
       <input
-        type="definition"
-        value={definition}
-        onChange={handleChangeDefinition}
+        type="text"
+        value={state.definition}
+        onChange={handleSetFormData}
+        name="definition"
       />
       <br />
       <textarea
-        type="description"
-        value={description}
-        onChange={handleChangeDescription}
+        type="text"
+        value={state.description}
+        onChange={handleSetFormData}
+        name="description"
       />
       <br />
       <input type="submit" />
-      <h1>{acronymName}</h1>
-      <h1>{definition}</h1>
-      <h1>{description}</h1>
-    </div>
+      <h1>{state.acronymName}</h1>
+      <h1>{state.definition}</h1>
+      <h1>{state.description}</h1>
+    </form>
   );
 };
 
-export default AcronymForm;
+export default connect(null, { addAcronym })(AcronymForm);
