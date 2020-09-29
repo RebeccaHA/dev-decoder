@@ -1,4 +1,5 @@
 import React from "react";
+import Acronym from "./Acronym";
 
 const AcronymList = props => {
   const acronyms = props.acronyms.map(acronym => {

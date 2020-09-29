@@ -9,3 +9,5 @@ const Acronym = ({ acronym }) => {
     </div>
   );
 };
+
+export default Acronym;
