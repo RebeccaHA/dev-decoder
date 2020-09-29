@@ -4,16 +4,21 @@ import { useEffect } from "react";
 import { fetchAcronyms } from "../redux/actions";
 import AcronymList from "../components/acronym/AcronymList";
 
-const acronymContainer = props => {
+const AcronymContainer = ({ fetchAcronyms, acronyms }) => {
+  console.log(acronyms);
+  useEffect(() => {
+    fetchAcronyms();
+  }, [fetchAcronyms]);
+
   return (
     <div>
-      <AcronymList />
+      <AcronymList acronyms={acronyms} />
     </div>
   );
 };
 
-useEffect(() => {
-  props.fetchAcronyms();
-});
+const mapStateToProps = state => {
+  return { acronyms: state.acronyms };
+};
 
-export default connect(null, { fetchAcronyms })(acronymContainer);
+export default connect(mapStateToProps, { fetchAcronyms })(AcronymContainer);

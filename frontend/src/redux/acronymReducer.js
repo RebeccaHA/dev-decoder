@@ -4,7 +4,7 @@ export function acronymReducer(state = { acronyms: [] }, action) {
       return { ...state, acronyms: [...state.acronyms, action.acronym] };
 
     case "FETCH_ACRONYMS":
-      return action.acronyms;
+      return { ...state, acronyms: action.acronyms };
 
     default:
       return state;
