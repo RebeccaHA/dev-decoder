@@ -1,21 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
+import { useEffect } from "react";
+import { fetchAcronyms } from "../redux/actions";
 
-function mapStateToProps(state) {
-  return {};
-}
+const acronymContainer = props => {
+  return (
+    <div>
+      <AcronymList />
+      <Acronym />
+    </div>
+  );
+};
 
-function fetchAcronyms() {
-  return dispatch => {
-    dispatch({ type: "LOADING_ACRONYMS" });
-    fetch("");
-  };
-}
+useEffect(() => {
+  props.fetchAcronyms();
+});
 
-class AcronymContainer extends Component {
-  render() {
-    return <div></div>;
-  }
-}
-
-export default connect(mapStateToProps)(acronymContainer);
+export default connect(null, { fetchAcronyms })(acronymContainer);
