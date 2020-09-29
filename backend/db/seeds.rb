@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'pry'
+require 'csv'
+
+
+csv = CSV.open('db/acronym.csv', headers: :first_row).map(&:to_h)
+
+    csv.each do |row|
+   
+        acronym = Acronym.new
+        acronym.acronym_name = row['name']
+        acronym.description = row['description']
+        acronym.definition = row['definition']
+        acronym.save
+        puts "#{acronym.acronym_name} saved"
+    end
+    
+    puts "There are now #{Acronym.count} rows in the acronym table"
