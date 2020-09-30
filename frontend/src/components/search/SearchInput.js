@@ -9,7 +9,7 @@ const SearchInput = ({ SearchAcronyms }) => {
   const [query, setQuery] = useState("");
 
   return (
-    <div>
+    <div className="search-input">
       <FormControl>
         <Input
           type="text"

@@ -38,15 +38,25 @@
   color: goldenrod;
   position: absolute;
   right: -105px;
-  bottom: 65px;
+  bottom: 37px;
 }
 
 .favourite {
   position: absolute;
   right: -105px;
-  bottom: 65px;
+  bottom: 37px;
 }
 
 .card-font {
   font-size: 10px;
+}
+
+.card-title {
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+
+.search-input {
+  padding-bottom: 30px;
+  padding-top: 30px;
 }

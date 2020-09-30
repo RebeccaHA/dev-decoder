@@ -21,21 +21,22 @@ const Acronym = ({ acronym }) => {
     <Card>
       <CardContent className="card">
         <div>
-          <h3 className="card-font">{acronym.name}</h3>
-          <br />
+          <h3 className="card-title">{acronym.name}</h3>
           <p className="card-font">
             <strong>Definition:</strong> {acronym.definition}
           </p>
           <p className="card-font">
             <strong>Description:</strong> {acronym.description}
           </p>
-          <IconButton className="favourite" onClick={handleFavourite}>
-            {clicked ? (
-              <StarIcon className="favourite-select" />
-            ) : (
-              <StarBorderIcon className="favourite" />
-            )}
-          </IconButton>
+          <span>
+            <IconButton className="favourite" onClick={handleFavourite}>
+              {clicked ? (
+                <StarIcon className="favourite-select" />
+              ) : (
+                <StarBorderIcon className="favourite" />
+              )}
+            </IconButton>
+          </span>
         </div>
       </CardContent>
     </Card>

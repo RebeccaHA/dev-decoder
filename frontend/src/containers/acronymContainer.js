@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { fetchAcronyms } from "../redux/AcronymActions";
 import AcronymList from "../components/acronym/AcronymList";
 import SearchInput from "../components/search/SearchInput";
+import { Grid } from "@material-ui/core";
 
 const AcronymContainer = ({
   fetchAcronyms,
@@ -22,7 +23,15 @@ const AcronymContainer = ({
 
   return (
     <div>
-      <SearchInput />
+      <Grid
+        container
+        spacing={1}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <SearchInput />
+      </Grid>
       <AcronymList acronyms={isQuery()} />
     </div>
   );
