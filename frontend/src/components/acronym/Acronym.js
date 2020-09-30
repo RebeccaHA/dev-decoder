@@ -3,7 +3,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import StarIcon from "@material-ui/icons/Star";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Button } from "@material-ui/core";
 import { useState } from "react";
 
 const Acronym = ({ acronym }) => {
@@ -19,19 +19,24 @@ const Acronym = ({ acronym }) => {
 
   return (
     <Card>
-      <CardContent>
+      <CardContent className="card">
         <div>
-          <h3>{acronym.name}</h3>
-          <p>Definition: {acronym.definition}</p>
-          <p>Description: {acronym.description}</p>
+          <h3 className="card-font">{acronym.name}</h3>
+          <br />
+          <p className="card-font">
+            <strong>Definition:</strong> {acronym.definition}
+          </p>
+          <p className="card-font">
+            <strong>Description:</strong> {acronym.description}
+          </p>
+          <IconButton className="favourite" onClick={handleFavourite}>
+            {clicked ? (
+              <StarIcon className="favourite-select" />
+            ) : (
+              <StarBorderIcon className="favourite" />
+            )}
+          </IconButton>
         </div>
-        <IconButton onClick={handleFavourite}>
-          {clicked ? (
-            <StarIcon className="favourite-select" />
-          ) : (
-            <StarBorderIcon className="favourite" />
-          )}
-        </IconButton>
       </CardContent>
     </Card>
   );

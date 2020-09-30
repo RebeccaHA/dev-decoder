@@ -33,3 +33,20 @@
   padding: 5px;
   text-align: center;
 }
+
+.favourite-select {
+  color: goldenrod;
+  position: absolute;
+  right: -105px;
+  bottom: 65px;
+}
+
+.favourite {
+  position: absolute;
+  right: -105px;
+  bottom: 65px;
+}
+
+.card-font {
+  font-size: 10px;
+}
