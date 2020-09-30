@@ -7,9 +7,9 @@ const Acronym = ({ acronym }) => {
     <Card>
       <CardContent>
         <div>
-          <h3>{acronym.name}</h3>
-          <p>{acronym.description}</p>
-          <p>{acronym.definition}</p>
+          <h3>Name: {acronym.name}</h3>
+          <p>Definition: {acronym.definition}</p>
+          <p>Description: {acronym.description}</p>
         </div>
       </CardContent>
     </Card>
