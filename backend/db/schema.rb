@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_174636) do
   enable_extension "plpgsql"
 
   create_table "acronyms", force: :cascade do |t|
-    t.string "acronym_name"
+    t.string "name"
     t.string "definition"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
