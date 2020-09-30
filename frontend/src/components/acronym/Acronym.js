@@ -28,15 +28,13 @@ const Acronym = ({ acronym }) => {
           <p className="card-font">
             <strong>Description:</strong> {acronym.description}
           </p>
-          <span>
-            <IconButton className="favourite" onClick={handleFavourite}>
-              {clicked ? (
-                <StarIcon className="favourite-select" />
-              ) : (
-                <StarBorderIcon className="favourite" />
-              )}
-            </IconButton>
-          </span>
+          <IconButton className="favourite" onClick={handleFavourite}>
+            {clicked ? (
+              <StarIcon className="favourite-select" />
+            ) : (
+              <StarBorderIcon className="favourite" />
+            )}
+          </IconButton>
         </div>
       </CardContent>
     </Card>

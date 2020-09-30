@@ -10,10 +10,10 @@ const Home = () => {
         <h1>Dev Decoder</h1>
         <p>
           The world creates acronyms to sound smart and to make things seem
-          complicated on the surface, and it works. Millions people joining new
-          clubs, organisations and learning new things are baffled by acronyms
-          on a daily basis. A language only the "in the know" can decode. But no
-          more!
+          complicated on the surface, and it works. Millions of people joining
+          new clubs, organisations and learning new things are baffled by
+          acronyms on a daily basis. A language only the "in the know" can
+          decode. But no more!
         </p>
         <br />
         <p>

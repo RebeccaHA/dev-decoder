@@ -17,8 +17,8 @@ const AcronymContainer = ({
     fetchAcronyms();
   }, [fetchAcronyms]);
 
-  const isQuery = query => {
-    return query !== "" ? searchAcronyms : acronyms;
+  const isQuery = () => {
+    return query == "" ? acronyms : searchAcronyms;
   };
 
   return (
