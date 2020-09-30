@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 const Home = () => {
   return (
@@ -14,12 +15,19 @@ const Home = () => {
           on a daily basis. A language only the "in the know" can decode. But no
           more!
         </p>
+        <br />
         <p>
           The Dev Decoder is a database of acronyms made up by the tech world,
           decoded especially for you.
         </p>
+        <br />
         <p>
-          Know an acronym we've missed? <Link to="/new">Add it here</Link>
+          Know an acronym we've missed?{" "}
+          <Button style={{ background: "white" }}>
+            <Link style={{ color: "black" }} to="/new">
+              Add it here
+            </Link>
+          </Button>
         </p>
       </div>
     </div>
