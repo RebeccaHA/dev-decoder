@@ -12,8 +12,8 @@ export const addAcronym = acronym => {
     })
       .then(response => response.json())
       .then(acronym => {
-        dispatch({ type: "ADD_ACRONYM", acronym: acronym });
         console.log(acronym);
+        dispatch({ type: "ADD_ACRONYM", acronym: acronym });
       });
   };
 };

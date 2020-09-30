@@ -19,9 +19,11 @@ class AcronymsController < ApplicationController
         render json: acronym
     end
 
+       
+
 
     private
     def acronyms_params
-        params.require(:acronym).permit(:acronym_name, :definition, :description)
+        params.require(:acronym).permit(:name, :definition, :description)
     end
 end

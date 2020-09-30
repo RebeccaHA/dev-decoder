@@ -1,22 +1,18 @@
 import React from "react";
 import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
+import { useState } from "react";
 
 const SearchInput = () => {
   const [query, setQuery] = useState("");
 
   const handleSetFormData = e => {
-    setQuery({ ...state, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    this.props.searchAcronyms(query);
+    setQuery({ query: e.target.value });
   };
 
   return (
     <div>
-      <FormControl onSubmit={handleSubmit}>
+      <FormControl>
         <Input
           type="text"
           value={query}

@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import { useEffect } from "react";
 import { fetchAcronyms } from "../redux/AcronymActions";
 import AcronymList from "../components/acronym/AcronymList";
+import SearchInput from "../components/search/SearchInput";
 
 const AcronymContainer = ({ fetchAcronyms, acronyms }) => {
-  console.log(acronyms);
   useEffect(() => {
     fetchAcronyms();
   }, [fetchAcronyms]);
 
   return (
     <div>
+      <SearchInput />
       <AcronymList acronyms={acronyms} />
     </div>
   );
