@@ -16,6 +16,7 @@ const AcronymForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.addAcronym(state);
+    console.log(state);
     setState({ name: "", definition: "", description: "" });
   };
 
@@ -25,7 +26,7 @@ const AcronymForm = props => {
         type="text"
         value={state.name}
         onChange={handleSetFormData}
-        name="acronymName"
+        name="name"
       />
       <br />
       <input
