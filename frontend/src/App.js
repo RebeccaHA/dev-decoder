@@ -5,7 +5,7 @@ import AcronymForm from "./components/acronym/AcronymForm";
 import Home from "./components/Home";
 import AcronymContainer from "./containers/AcronymContainer";
 import NavBar from "./components/navigation/NavBar";
-
+import "fontsource-roboto";
 const App = () => {
   return (
     <Router>
