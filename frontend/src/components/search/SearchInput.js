@@ -2,13 +2,11 @@ import React from "react";
 import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
 import { useState } from "react";
+import { SearchAcronyms } from "../../redux/SearchActions";
+import { connect } from "react-redux";
 
-const SearchInput = () => {
+const SearchInput = ({ SearchAcronyms }) => {
   const [query, setQuery] = useState("");
-
-  const handleSetFormData = e => {
-    setQuery({ query: e.target.value });
-  };
 
   return (
     <div>
@@ -16,7 +14,10 @@ const SearchInput = () => {
         <Input
           type="text"
           value={query}
-          onChange={handleSetFormData}
+          onChange={e => {
+            setQuery(e.target.value);
+            SearchAcronyms(e.target.value);
+          }}
           name="query"
         />
       </FormControl>
@@ -24,4 +25,4 @@ const SearchInput = () => {
   );
 };
 
-export default SearchInput;
+export default connect(null, { SearchAcronyms })(SearchInput);
