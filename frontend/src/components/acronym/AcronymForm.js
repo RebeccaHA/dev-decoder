@@ -4,7 +4,7 @@ import { addAcronym } from "../../redux/actions";
 
 const AcronymForm = props => {
   const [state, setState] = useState({
-    acronymName: "",
+    name: "",
     definition: "",
     description: ""
   });
@@ -16,14 +16,14 @@ const AcronymForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.addAcronym(state);
-    setState({ acronymName: "", definition: "", description: "" });
+    setState({ name: "", definition: "", description: "" });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={state.acronymName}
+        value={state.name}
         onChange={handleSetFormData}
         name="acronymName"
       />
@@ -43,7 +43,7 @@ const AcronymForm = props => {
       />
       <br />
       <input type="submit" />
-      <h1>{state.acronymName}</h1>
+      <h1>{state.name}</h1>
       <h1>{state.definition}</h1>
       <h1>{state.description}</h1>
     </form>

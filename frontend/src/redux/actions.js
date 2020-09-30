@@ -1,5 +1,17 @@
 export const addAcronym = acronym => {
-  return { type: "ADD_ACRONYM", acronym };
+  return dispatch => {
+    return fetch("http://localhost:3000/acronyms", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ acronym: acronym })
+    })
+      .then(response => response.json())
+      .then(acronym => {
+        dispatch(addAcronym(acronym));
+      });
+  };
 };
 
 export const fetchAcronyms = () => {
