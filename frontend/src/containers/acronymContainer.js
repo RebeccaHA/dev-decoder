@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useEffect } from "react";
-import { fetchAcronyms } from "../redux/actions";
+import { fetchAcronyms } from "../redux/AcronymActions";
 import AcronymList from "../components/acronym/AcronymList";
 
 const AcronymContainer = ({ fetchAcronyms, acronyms }) => {

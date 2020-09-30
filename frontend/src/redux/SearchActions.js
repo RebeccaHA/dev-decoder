@@ -1,0 +1,3 @@
+const SearchAcronym = query => {
+  fetch();
+};

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addAcronym } from "../../redux/actions";
+import { addAcronym } from "../../redux/AcronymActions";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
