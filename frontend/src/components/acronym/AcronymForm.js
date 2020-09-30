@@ -33,6 +33,7 @@ const AcronymForm = props => {
         value={state.name}
         onChange={handleSetFormData}
         name="name"
+        className="form-input"
       />
       <br />
       <InputLabel>Acronym Definition:</InputLabel>
@@ -41,6 +42,7 @@ const AcronymForm = props => {
         value={state.definition}
         onChange={handleSetFormData}
         name="definition"
+        className="form-input"
       />
       <br />
       <InputLabel>Acronym Description</InputLabel>
@@ -49,12 +51,10 @@ const AcronymForm = props => {
         value={state.description}
         onChange={handleSetFormData}
         name="description"
+        className="form-input"
       />
       <br />
       <Button type="submit">Contribute</Button>
-      <h1>{state.name}</h1>
-      <h1>{state.definition}</h1>
-      <h1>{state.description}</h1>
     </form>
   );
 };
