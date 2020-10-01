@@ -22,11 +22,19 @@
 
 .nav-bar {
   text-align: center;
+  background-color: black;
+  display: flex;
 }
 
 .nav-link {
   padding: 5px;
-  color: black;
+  color: white;
+  font-size: 10px;
+}
+
+.nav-group-right {
+  position: fixed;
+  right: 10px;
 }
 .form {
   margin-top: 100px;
