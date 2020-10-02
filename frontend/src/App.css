@@ -5,9 +5,8 @@
 }
 
 .home-container {
-  position: relative;
-  max-width: 100%;
-  max-height: 100%;
+  background-image: url("../src/soviet.jpg");
+  background-size: auto;
 }
 
 .centered {
@@ -20,16 +19,25 @@
   width: 50%;
 }
 
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 30px;
+}
+
 .nav-bar {
   text-align: center;
   background-color: black;
   display: flex;
+  padding: 10px;
 }
 
 .nav-link {
-  padding: 5px;
+  padding: 10px;
   color: white;
-  font-size: 10px;
+  font-size: 25px;
 }
 
 .nav-group-right {

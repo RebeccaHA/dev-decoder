@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 const Home = () => {
   return (
     <div className="home-container">
-      <img src="soviet.jpg" style={{ width: "100%" }} />
+      {/* <img src="soviet.jpg" style={{ width: "100%" }} /> */}
       <div className="centered">
         <h1>Dev Decoder</h1>
         <p>
