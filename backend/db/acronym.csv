@@ -6,3 +6,36 @@ CSS,Cascading Style Sheets,A language used to organise and design how a web site
 API,Application Programming Interface,An external interface from an application that other applications can access
 DOM,Document Object Model,A cross-platform and language-independent convention for interacting with documents
 JS,Javascript,A client-side scripting language used to develop Web applications
+AJAX,Asynchronous JavaScript and XML,A group of web development techniques to let you create asynchronous applications
+DML,Data Manipulation Language,A set of SQL terms used to view data related to objects
+DOM,Document Object Model,A cross-platform and language-independent convention for interacting with documents
+ERD,Entity Relationship Diagram,A diagram created to explain how database tables or entities are related. To create one, use one of these tools.
+ERM,Entity Relationship Model,A diagram created to explain how entities in a program are related
+FCL,Framework Class Library,Standard library for Microsoft’s .NET framework that includes a collection of classes
+GUID,Global Unique Identifier,A value in a database record used to uniquely identify that record in the database
+IDE,Integrated Development Environment,Software that allows developers to write code
+JSON,JavaScript Object Notation,A lightweight data interchange format
+MAPI,Messaging Application Programming Interface,A messaging architecture and API for Window
+MDA,Model-Driven Architecture,An approach to designing software that structures it around models
+MVC,Model View Controller,A software design that includes three levels of modules
+ORM,Object Relational Mapping,A technique for converting data between systems in object oriented programming language
+PHP,PHP Hypertext Preprocessor,A popular language used to develop web site
+REGEX,Regular Expression,A set of rules that are used to process strings
+REST,Representational State Transfer,An architectural style that allows loading data from web page
+SCM,Source Code Management,The process of storing source code on a server and managing it for a team
+SQL,Structured Query Language,A language used to access databases, such as Oracle and Microsoft SQL Server
+VS,Visual Studio,An IDE or program developed by Microsoft that is used to write software
+XAML,Extensible Application Markup Language,An XML-based language designed by Microsoft
+XML,Extensible Markup Language,A language used to store data for transfer between systems
+YAGNI,You Ain’t Gonna Need It,A software development principle that says you should only develop for features that you know
+SIT,Systems Integration Testing,The testing process to ensure the software integrates with other systems successfully
+TDD,Test-Driven Development,A development process that starts with test cases, which are then used to develop requirements
+UAT,User Acceptance Testing,The testing process where end users perform tests and validate them against their requirements
+UI,User Interface,The display, screens, or windows of an application
+UX,User Experience,The process of using the application from a user’s perspective. Includes UI, process, and customer journeys
+FDD,Feature Driven Development,A method of development that is centred around developing for a feature
+AT,Acceptance Testing,Testing the software against the requirements to see if they have been met
+CDN,Content Delivery Network,A network of distributed servers that store duplicate copies of our web content
+CMS,Content Manager System,A software that allows us to publish, modify, and organize different kind of digital content
+CRUD,Create, Read, Update, Delete,A term used in database management, it contains the four basic functions of a persistent database. In SQL, the four related commands are: INSERT (for Create), SELECT (for Read), UPDATE (for Update), and DELETE (for Delete).
+CTA,Call-To-Action,A CTA is a message directed to users or prospective customers to take an immediate action. 

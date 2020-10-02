@@ -11,6 +11,7 @@ const SearchInput = ({ SearchAcronyms }) => {
   return (
     <div className="search-input">
       <FormControl>
+        <label>Search the acronym library</label>
         <Input
           type="text"
           value={query}

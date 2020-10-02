@@ -14,6 +14,9 @@ export const addAcronym = acronym => {
       .then(acronym => {
         console.log(acronym);
         dispatch({ type: "ADD_ACRONYM", acronym: acronym });
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 };

@@ -10,6 +10,8 @@ class AcronymsController < ApplicationController
         acronym = Acronym.new(acronyms_params)
         if acronym.save
             render json: acronym
+        else 
+           render json: acronym.errors[:name]
         end
     end
 

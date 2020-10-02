@@ -4,7 +4,6 @@ export function acronymReducer(
 ) {
   switch (action.type) {
     case "ADD_ACRONYM":
-      console.log(action.acronym);
       return { ...state, acronyms: [...state.acronyms, action.acronym] };
 
     case "FETCH_ACRONYMS":
