@@ -1,6 +1,6 @@
 class AcronymsController < ApplicationController
     def index
-        acronyms = Acronym.all
+        acronyms = Acronym.all.order(name: :asc)
 
         render json: acronyms
     end
