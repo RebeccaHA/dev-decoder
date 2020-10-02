@@ -11,7 +11,7 @@ class AcronymsController < ApplicationController
         if acronym.save
             render json: acronym
         else 
-           render json: acronym.errors[:name]
+           render json: {message: acronym.errors[:name]}
         end
     end
 

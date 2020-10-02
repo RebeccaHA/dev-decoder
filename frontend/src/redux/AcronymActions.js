@@ -1,5 +1,4 @@
 export const addAcronym = acronym => {
-  console.log(acronym);
   return dispatch => {
     return fetch("http://localhost:3000/acronyms", {
       method: "POST",
@@ -11,12 +10,10 @@ export const addAcronym = acronym => {
       })
     })
       .then(response => response.json())
-      .then(acronym => {
-        console.log(acronym);
-        dispatch({ type: "ADD_ACRONYM", acronym: acronym });
-      })
-      .catch(error => {
-        console.log(error);
+      .then(data => {
+        data.message
+          ? dispatch({ type: "POST_ERROR", errorMessage: data.message })
+          : dispatch({ type: "ADD_ACRONYM", acronym: data });
       });
   };
 };

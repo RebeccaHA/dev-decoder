@@ -1,5 +1,5 @@
 export function acronymReducer(
-  state = { acronyms: [], searchAcronyms: [], query: "" },
+  state = { acronyms: [], searchAcronyms: [], query: "", errorMessage: "" },
   action
 ) {
   switch (action.type) {
@@ -17,6 +17,10 @@ export function acronymReducer(
         ),
         query: action.payload
       };
+
+    case "POST_ERROR":
+      console.log(action.errorMessage[0]);
+      return { ...state, errorMessage: action.errorMessage[0] };
 
     default:
       return state;

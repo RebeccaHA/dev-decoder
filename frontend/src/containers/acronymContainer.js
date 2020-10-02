@@ -10,8 +10,7 @@ const AcronymContainer = ({
   fetchAcronyms,
   acronyms,
   searchAcronyms,
-  query,
-  loading
+  query
 }) => {
   useEffect(() => {
     fetchAcronyms();
