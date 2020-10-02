@@ -18,6 +18,9 @@ export function acronymReducer(
         query: action.payload
       };
 
+    case "REMOVE_ERROR":
+      return { ...state, errorMessage: "" };
+
     case "POST_ERROR":
       console.log(action.errorMessage[0]);
       return { ...state, errorMessage: action.errorMessage[0] };
