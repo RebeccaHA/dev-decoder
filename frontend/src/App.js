@@ -6,6 +6,9 @@ import Home from "./components/Home";
 import AcronymContainer from "./containers/AcronymContainer";
 import NavBar from "./components/navigation/NavBar";
 import "fontsource-roboto";
+import LoginForm from "./components/auth/LoginForm";
+import SignupForm from "./components/auth/SignupForm";
+
 const App = () => {
   return (
     <Router>
@@ -14,6 +17,9 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/new" component={AcronymForm} />
         <Route exact path="/acronyms" component={AcronymContainer} />
+        <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/signup" component={SignupForm} />
+        {/* <Route exact path="/favourites" component={FavouriteContainer} */}
       </div>
     </Router>
   );
