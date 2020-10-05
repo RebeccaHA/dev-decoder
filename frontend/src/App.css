@@ -5,8 +5,9 @@
 }
 
 .home-container {
-  background-image: url("../src/soviet.jpg");
-  background-size: auto;
+  background-image: url("soviet.jpg");
+  display: block;
+  height: 100vh;
 }
 
 .centered {
