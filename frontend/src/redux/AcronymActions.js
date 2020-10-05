@@ -6,7 +6,7 @@ export const addAcronym = acronym => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        acronym: acronym
+        acronym
       })
     })
       .then(response => response.json())
