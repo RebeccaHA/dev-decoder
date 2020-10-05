@@ -1,5 +1,6 @@
 export function AuthReducer(
-  state = { loggedIn: false, currentUser: {}, action }
+  state = { loggedIn: false, currentUser: {} },
+  action
 ) {
   switch (action.type) {
     case "LOGGED_IN":

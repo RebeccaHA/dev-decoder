@@ -20,7 +20,7 @@ export const SignUp = user => {
 export const LogIn = user => {
   return dispatch => {
     return fetch("http://localhost:3000/users", {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },

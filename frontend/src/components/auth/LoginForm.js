@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { LogIn } from "../../redux/AuthActions";
-import { SignUp } from "../../redux/AuthActions";
 import Input from "@material-ui/core/Input";
 import { Alert } from "@material-ui/lab";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
@@ -75,4 +74,4 @@ const LoginForm = props => {
   );
 };
 
-export default connect(null, { LogIn, SignUp })(LoginForm);
+export default connect(null, { LogIn })(LoginForm);
