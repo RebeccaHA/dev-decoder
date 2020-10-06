@@ -4,16 +4,16 @@ export function AuthReducer(
 ) {
   switch (action.type) {
     case "LOGGED_IN":
+      debugger;
       return {
-        ...state,
-        currentUser: action.payload.current_user,
+        currentUser: action.payload.user,
         loggedIn: action.payload.logged_in
       };
 
     case "SIGN_UP":
       return {
         ...state,
-        currentUser: action.payload.current_user,
+        currentUser: action.payload.user,
         loggedIn: action.payload.logged_in
       };
 

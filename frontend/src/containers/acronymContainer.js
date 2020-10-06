@@ -37,9 +37,9 @@ const AcronymContainer = ({
 };
 
 const mapStateToProps = state => ({
-  acronyms: state.acronyms,
-  searchAcronyms: state.searchAcronyms,
-  query: state.query
+  acronyms: state.acronyms.acronyms,
+  searchAcronyms: state.acronyms.searchAcronyms,
+  query: state.acronyms.query
 });
 
 export default connect(mapStateToProps, { fetchAcronyms })(AcronymContainer);

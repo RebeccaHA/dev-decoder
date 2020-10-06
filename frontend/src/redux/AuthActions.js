@@ -10,16 +10,18 @@ export const SignUp = user => {
       })
     })
       .then(resp => resp.json())
-      .then(respJson => {
-        console.log(respJson);
-        dispatch({ type: "SIGN_UP", user: respJson });
+      .then(data => {
+        dispatch({
+          type: "SIGN_UP",
+          payload: { loggedIn: data.logged_in, currentUser: data.user }
+        });
       });
   };
 };
 
 export const LogIn = user => {
   return dispatch => {
-    return fetch("http://localhost:3000/users", {
+    return fetch("http://localhost:3000/sessions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -29,9 +31,11 @@ export const LogIn = user => {
       })
     })
       .then(resp => resp.json())
-      .then(respJson => {
-        console.log(respJson);
-        dispatch({ type: "LOGGED_IN", user: respJson });
+      .then(data => {
+        dispatch({
+          type: "LOGGED_IN",
+          payload: { loggedIn: data.logged_in, currentUser: data.user }
+        });
       });
   };
 };

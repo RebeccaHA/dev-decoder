@@ -16,6 +16,13 @@ class UsersController < ApplicationController
         if user
           render json: { status: 201, user: user, logged_in: true}
       end
+    end
+
+      def index
+        users = User.all
+
+        render json: users
+      end
 
     
     

@@ -22,8 +22,7 @@ const LoginForm = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.LogIn(state);
-
-    setState({ email: "", password: "", password_confirmation: "" });
+    props.history.push("/");
   };
 
   return (

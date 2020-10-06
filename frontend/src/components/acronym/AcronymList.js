@@ -3,6 +3,7 @@ import Acronym from "./Acronym";
 import Grid from "@material-ui/core/Grid";
 
 const AcronymList = props => {
+  console.log(props);
   const acronyms = props.acronyms.map(acronym => (
     <div key={acronym.id}>
       <Grid

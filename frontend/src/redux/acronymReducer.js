@@ -1,4 +1,4 @@
-export function acronymReducer(
+export function AcronymReducer(
   state = { acronyms: [], searchAcronyms: [], query: "", errorMessage: "" },
   action
 ) {
