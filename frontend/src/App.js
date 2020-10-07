@@ -4,6 +4,7 @@ import "./App.css";
 import AcronymForm from "./components/acronym/AcronymForm";
 import Home from "./components/Home";
 import AcronymContainer from "./containers/AcronymContainer";
+import FavouriteContainer from "./containers/FavouriteContainer";
 import NavBar from "./components/navigation/NavBar";
 import "fontsource-roboto";
 import LoginForm from "./components/auth/LoginForm";
@@ -19,7 +20,7 @@ const App = () => {
         <Route exact path="/acronyms" component={AcronymContainer} />
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/signup" component={SignupForm} />
-        {/* <Route exact path="/favourites" component={FavouriteContainer} */}
+        <Route exact path="/favourites" component={FavouriteContainer} />
       </div>
     </Router>
   );
