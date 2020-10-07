@@ -63,14 +63,14 @@ p {
 .favourite-select {
   color: goldenrod;
   position: absolute;
-  right: -105px;
-  bottom: 37px;
+  right: -200px;
+  bottom: 20px;
 }
 
 .favourite {
   position: absolute;
-  right: -105px;
-  bottom: 37px;
+  right: -200px;
+  bottom: 20px;
 }
 
 .card-font {

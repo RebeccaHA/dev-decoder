@@ -15,17 +15,13 @@ class AcronymsController < ApplicationController
         end
     end
 
-    def show
-        acronym = Acronym.find_by(params[:id])
-
-        render json: acronym
-    end
+  
 
        
 
 
     private
     def acronyms_params
-        params.require(:acronym).permit(:name, :definition, :description)
+        params.require(:acronym).permit(:name, :definition, :description, :favourite)
     end
 end

@@ -4,6 +4,7 @@ class CreateAcronyms < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :definition
       t.string :description
+      t.boolean :favourite
 
       t.timestamps
     end
