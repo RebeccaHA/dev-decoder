@@ -46,11 +46,10 @@ export const removeError = () => {
   };
 };
 
-export const Favourite = acronym => {
-  debugger;
+export const favourite = acronym => {
   return dispatch => {
     fetch(`http://localhost:3000/acronyms/${acronym.id}`, {
-      method: "PATCH",
+      method: "PUT",
       body: JSON.stringify(acronym),
       headers: { "Content-Type": "application/json" }
     });
