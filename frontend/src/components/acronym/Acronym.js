@@ -32,7 +32,7 @@ const Acronym = ({ acronym, favourite }) => {
             <strong>Description:</strong> {acronym.description}
           </p>
           <IconButton className="favourite" onClick={handleFavourite}>
-            {clicked ? (
+            {clicked || acronym.favourite === true ? (
               <StarIcon className="favourite-select" />
             ) : (
               <StarBorderIcon className="favourite" />
