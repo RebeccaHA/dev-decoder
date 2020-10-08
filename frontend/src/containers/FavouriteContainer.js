@@ -12,6 +12,7 @@ const FavouriteContainer = ({ fetchFavouriteAcronyms, favourite_acronyms }) => {
 
   return (
     <div>
+      <h2 style={{ textAlign: "center" }}>Favourite Acronyms</h2>
       <AcronymList acronyms={favourite_acronyms} />
     </div>
   );

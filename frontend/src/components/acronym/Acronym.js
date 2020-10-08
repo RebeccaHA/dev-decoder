@@ -4,7 +4,6 @@ import CardContent from "@material-ui/core/CardContent";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import StarIcon from "@material-ui/icons/Star";
 import { IconButton, Button } from "@material-ui/core";
-import { useState } from "react";
 import { favourite } from "../../redux/AcronymActions";
 import { unfavourite } from "../../redux/AcronymActions";
 import { connect } from "react-redux";
