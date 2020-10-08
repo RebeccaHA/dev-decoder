@@ -14,6 +14,9 @@ const NavBar = () => {
         <NavLink className="nav-link" to="/acronyms">
           Acronyms
         </NavLink>
+        <NavLink className="nav-link" to="/favourites">
+          Favourites
+        </NavLink>
         <NavLink className="nav-link" to="/new">
           Contribute acronym
         </NavLink>
