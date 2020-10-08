@@ -5,13 +5,16 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 import StarIcon from "@material-ui/icons/Star";
 import { IconButton, Button } from "@material-ui/core";
 import { useState } from "react";
+import { Favourite } from "../../redux/AcronymActions";
+import { connect } from "react-redux";
 
-const Acronym = ({ acronym }) => {
+const Acronym = ({ acronym, Favourite }) => {
   const [clicked, setClicked] = useState();
 
   const handleFavourite = () => {
     if (clicked === false) {
       setClicked(true);
+      Favourite(acronym);
     } else {
       setClicked(false);
     }
@@ -41,4 +44,4 @@ const Acronym = ({ acronym }) => {
   );
 };
 
-export default Acronym;
+export default connect(null, { Favourite })(Acronym);

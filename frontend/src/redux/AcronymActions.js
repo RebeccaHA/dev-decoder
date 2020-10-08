@@ -29,8 +29,32 @@ export const fetchAcronyms = () => {
   };
 };
 
+export const fetchFavouriteAcronyms = () => {
+  return dispatch => {
+    fetch("http://localhost:3000/acronyms")
+      .then(resp => resp.json())
+      .then(respJson => {
+        console.log(respJson);
+        dispatch({ type: "FETCH_FAVOURITE_ACRONYMS", acronyms: respJson });
+      });
+  };
+};
+
 export const removeError = () => {
   return dispatch => {
     dispatch({ type: "REMOVE_ERROR" });
+  };
+};
+
+export const Favourite = acronym => {
+  debugger;
+  return dispatch => {
+    fetch(`http://localhost:3000/acronyms/${acronym.id}`, {
+      method: "PATCH",
+      body: JSON.stringify(acronym),
+      headers: { "Content-Type": "application/json" }
+    });
+
+    dispatch({ type: "FAVOURITE_ACRONYM", acronym: acronym });
   };
 };

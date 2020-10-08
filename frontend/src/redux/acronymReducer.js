@@ -9,6 +9,12 @@ export function AcronymReducer(
     case "FETCH_ACRONYMS":
       return { ...state, acronyms: action.acronyms };
 
+    case "FETCH_FAVOURITE_ACRONYMS":
+      return {
+        ...state,
+        acronyms: action.acronyms.filter(acronym => acronym.favourite === true)
+      };
+
     case "SEARCH_ACRONYMS":
       return {
         ...state,
@@ -17,6 +23,9 @@ export function AcronymReducer(
         ),
         query: action.payload
       };
+
+    case "FAVOURITE_ACRONYM":
+      return { ...state, acronyms: [...state.acronyms, action.acronym] };
 
     case "REMOVE_ERROR":
       return { ...state, errorMessage: "" };

@@ -15,6 +15,16 @@ class AcronymsController < ApplicationController
         end
     end
 
+    
+    def show
+        acronym = Acronym.find_by(id: params[:id])
+        acronym.favourite = true
+        if acronym.save
+            render json: acronym
+        else 
+           render json: {message: acronym.errors[:name]}
+        end
+    end
   
 
        
