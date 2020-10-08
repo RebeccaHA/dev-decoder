@@ -25,7 +25,22 @@ export function AcronymReducer(
       };
 
     case "FAVOURITE_ACRONYM":
-      return { ...state, acronyms: [...state.acronyms, action.acronym] };
+      const newAcronyms = state.acronyms.map(acronym =>
+        acronym.id !== action.acronym.id ? acronym : action.acronym
+      );
+      return {
+        ...state,
+        acronyms: newAcronyms
+      };
+
+    case "UNFAVOURITE_ACRONYM":
+      const newUnFavAcronyms = state.acronyms.map(acronym =>
+        acronym.id !== action.acronym.id ? acronym : action.acronym
+      );
+      return {
+        ...state,
+        acronyms: newUnFavAcronyms
+      };
 
     case "REMOVE_ERROR":
       return { ...state, errorMessage: "" };

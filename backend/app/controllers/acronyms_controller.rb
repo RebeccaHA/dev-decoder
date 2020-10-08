@@ -1,3 +1,4 @@
+require 'pry'
 class AcronymsController < ApplicationController
     def index
         acronyms = Acronym.all.order(name: :asc)
@@ -19,10 +20,17 @@ class AcronymsController < ApplicationController
     def update
        
         acronym = Acronym.find_by(id: params[:id])
-       
-        acronym.favourite = true
         
-        if acronym.save
+       if acronym.favourite == false
+        acronym.favourite = true
+       elsif acronym.favourite == true 
+        acronym.favourite = false
+       end
+      
+   
+      if  acronym.update(acronyms_params)
+        
+       
             render json: acronym
         else 
            render json: {message: acronym.errors[:name]}
@@ -35,6 +43,6 @@ class AcronymsController < ApplicationController
 
     private
     def acronyms_params
-        params.permit(:name, :definition, :description, :favourite)
+        params.permit(:name, :definition, :description)
     end
 end

@@ -52,8 +52,24 @@ export const favourite = acronym => {
       method: "PUT",
       body: JSON.stringify(acronym),
       headers: { "Content-Type": "application/json" }
-    });
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        dispatch({ type: "FAVOURITE_ACRONYM", acronym: data });
+      });
+  };
+};
 
-    dispatch({ type: "FAVOURITE_ACRONYM", acronym: acronym });
+export const unfavourite = acronym => {
+  return dispatch => {
+    fetch(`http://localhost:3000/acronyms/${acronym.id}`, {
+      method: "PUT",
+      body: JSON.stringify(acronym),
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        dispatch({ type: "UNFAVOURITE_ACRONYM", acronym: data });
+      });
   };
 };
