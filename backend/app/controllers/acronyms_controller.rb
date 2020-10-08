@@ -19,8 +19,9 @@ class AcronymsController < ApplicationController
     def update
        
         acronym = Acronym.find_by(id: params[:id])
+       
         acronym.favourite = true
-        acronym.update(acronyms_params)
+        
         if acronym.save
             render json: acronym
         else 
