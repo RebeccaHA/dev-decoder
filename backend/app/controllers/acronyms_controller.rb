@@ -9,6 +9,7 @@ class AcronymsController < ApplicationController
 
     def create
         acronym = Acronym.new(acronyms_params)
+       
         if acronym.save
             render json: acronym
         else 

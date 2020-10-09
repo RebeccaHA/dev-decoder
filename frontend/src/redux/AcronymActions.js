@@ -1,4 +1,5 @@
 export const addAcronym = acronym => {
+  debugger;
   return dispatch => {
     return fetch("http://localhost:3000/acronyms", {
       method: "POST",
@@ -6,7 +7,9 @@ export const addAcronym = acronym => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        acronym
+        name: acronym.name,
+        definition: acronym.definition,
+        description: acronym.description
       })
     })
       .then(response => response.json())
