@@ -18,8 +18,8 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/new" component={AcronymForm} />
         <Route exact path="/acronyms" component={AcronymContainer} />
-        <Route exact path="/login" component={LoginForm} />
-        <Route exact path="/signup" component={SignupForm} />
+        {/* <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/signup" component={SignupForm} /> */}
         <Route exact path="/favourites" component={FavouriteContainer} />
       </div>
     </Router>

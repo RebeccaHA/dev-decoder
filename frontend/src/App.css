@@ -41,10 +41,6 @@ p {
   font-size: 25px;
 }
 
-.nav-group-right {
-  position: fixed;
-  right: 10px;
-}
 .form {
   margin-top: 100px;
   border: 1px solid black;
@@ -85,4 +81,25 @@ p {
 .search-input {
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+@media only screen and (max-width: 560px) {
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .card {
+    position: relative;
+  }
+  .favourite {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }
