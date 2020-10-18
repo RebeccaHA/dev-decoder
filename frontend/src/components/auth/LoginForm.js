@@ -56,16 +56,7 @@ const LoginForm = props => {
             className="form-input"
           />
           <br />
-          <label className="form-label">Password Confirmation</label>
-          <br />
-          <TextareaAutosize
-            type="text"
-            value={state.password_confirmation}
-            onChange={handleSetFormData}
-            name="password_confirmation"
-            className="form-input"
-          />
-          <br />
+
           <Button type="submit">Login</Button>
         </form>
       </Grid>
