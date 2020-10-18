@@ -20,8 +20,7 @@ const LoginForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.LogIn(state);
-    props.history.push("/");
+    props.LogIn(state, props.history);
   };
 
   return (

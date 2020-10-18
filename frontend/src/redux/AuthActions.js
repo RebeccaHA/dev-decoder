@@ -7,13 +7,13 @@ export const SignUp = (user, history) => {
       },
       credentials: "include",
       body: JSON.stringify({
-        user
+        user: user
       })
     })
       .then(resp => resp.json())
       .then(data => {
         dispatch({
-          type: "SIGN_UP",
+          type: "SUCCESS",
           payload: { loggedIn: data.logged_in, currentUser: data.user }
         });
         history.push("/");
@@ -30,13 +30,13 @@ export const LogIn = (user, history) => {
       },
       credentials: "include",
       body: JSON.stringify({
-        user
+        user: user
       })
     })
       .then(resp => resp.json())
       .then(data => {
         dispatch({
-          type: "SIGN_UP",
+          type: "SUCCESS",
           payload: { loggedIn: data.logged_in, currentUser: data.user }
         });
         history.push("/");

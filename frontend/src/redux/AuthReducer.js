@@ -3,13 +3,18 @@ export function AuthReducer(
   action
 ) {
   switch (action.type) {
-    case "SIGN_UP":
+    case "SUCCESS":
       return {
         ...state,
-        currentUser: action.payload.user,
-        loggedIn: action.payload.logged_in
+        currentUser: action.payload.currentUser,
+        loggedIn: action.payload.loggedIn
       };
-
+    case "LOGOUT":
+      return {
+        ...state,
+        loggedIn: false,
+        currentUser: {}
+      };
     default:
       return state;
   }

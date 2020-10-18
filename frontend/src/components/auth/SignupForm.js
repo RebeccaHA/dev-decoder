@@ -21,7 +21,7 @@ const SignupForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.SignUp(state);
+    props.SignUp(state, props.history);
   };
 
   return (
