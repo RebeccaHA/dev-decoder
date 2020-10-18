@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import "./App.css";
 import AcronymForm from "./components/acronym/AcronymForm";
 import Home from "./components/Home";
@@ -10,7 +16,7 @@ import "fontsource-roboto";
 import LoginForm from "./components/auth/LoginForm";
 import SignupForm from "./components/auth/SignupForm";
 
-const App = () => {
+const App = props => {
   return (
     <Router>
       <div>
@@ -20,10 +26,26 @@ const App = () => {
         <Route exact path="/acronyms" component={AcronymContainer} />
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/signup" component={SignupForm} />
-        <Route exact path="/favourites" component={FavouriteContainer} />
+        <Route
+          exact
+          path="/favourites"
+          render={props => {
+            if (props.loggedIn) {
+              return <FavouriteContainer {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
+        />
       </div>
     </Router>
   );
 };
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.users.loggedIn
+  };
+};
+
+export default connect(mapStateToProps)(App);

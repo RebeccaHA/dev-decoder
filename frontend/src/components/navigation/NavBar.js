@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
+import { connect } from "react-redux";
 
-const NavBar = () => {
+const NavBar = props => {
   return (
     <div className="nav-bar">
       <div>
@@ -14,9 +15,12 @@ const NavBar = () => {
         <NavLink className="nav-link" to="/acronyms">
           Acronyms
         </NavLink>
-        <NavLink className="nav-link" to="/favourites">
-          Favourites
-        </NavLink>
+        {props.loggedIn ? (
+          <NavLink className="nav-link" to="/favourites">
+            Favourites
+          </NavLink>
+        ) : null}
+
         <NavLink className="nav-link" to="/new">
           Contribute acronym
         </NavLink>
@@ -25,4 +29,10 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.users.loggedIn
+  };
+};
+
+export default connect(mapStateToProps)(NavBar);
