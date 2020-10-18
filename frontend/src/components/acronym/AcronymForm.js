@@ -22,8 +22,9 @@ const AcronymForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log("a");
     props.addAcronym(state);
-
+    console.log("b");
     setState({ name: "", definition: "", description: "" });
   };
 
@@ -38,9 +39,9 @@ const AcronymForm = props => {
 
   return (
     <div>
-      {props.errorMessage && hidden === false && (
+      {props.errorMessage ? (
         <Alert onClose={handleClose}>{props.errorMessage}</Alert>
-      )}
+      ) : null}
 
       <Grid
         container
@@ -89,7 +90,7 @@ const AcronymForm = props => {
 };
 
 const mapStateToProps = state => ({
-  errorMessage: state.errorMessage
+  errorMessage: state.acronyms.errorMessage
 });
 
 export default connect(mapStateToProps, { addAcronym, removeError })(

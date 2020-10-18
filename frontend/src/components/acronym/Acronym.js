@@ -7,8 +7,15 @@ import { IconButton, Button } from "@material-ui/core";
 import { favourite } from "../../redux/AcronymActions";
 import { unfavourite } from "../../redux/AcronymActions";
 import { connect } from "react-redux";
+import { useState } from "react";
 
 const Acronym = ({ acronym, favourite, unfavourite }) => {
+  const [likes, setLikes] = useState(0);
+
+  const handleClick = () => {
+    const addlike = likes + 1;
+    setLikes(addlike);
+  };
   const handleFavourite = () => {
     if (acronym.favourite === false) {
       favourite(acronym);
@@ -35,6 +42,10 @@ const Acronym = ({ acronym, favourite, unfavourite }) => {
               <StarBorderIcon className="favourite" />
             )}
           </IconButton>
+          <button type="submit" onClick={handleClick}>
+            Click me
+          </button>{" "}
+          {likes}
         </div>
       </CardContent>
     </Card>

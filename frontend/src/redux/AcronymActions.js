@@ -1,6 +1,6 @@
 export const addAcronym = acronym => {
-  debugger;
   return dispatch => {
+    console.log("c");
     return fetch("http://localhost:3000/acronyms", {
       method: "POST",
       headers: {
@@ -14,6 +14,7 @@ export const addAcronym = acronym => {
     })
       .then(response => response.json())
       .then(data => {
+        console.log("d");
         data.message
           ? dispatch({ type: "POST_ERROR", errorMessage: data.message })
           : dispatch({ type: "ADD_ACRONYM", acronym: data });
@@ -25,9 +26,8 @@ export const fetchAcronyms = () => {
   return dispatch => {
     fetch("http://localhost:3000/acronyms")
       .then(resp => resp.json())
-      .then(respJson => {
-        console.log(respJson);
-        dispatch({ type: "FETCH_ACRONYMS", acronyms: respJson });
+      .then(data => {
+        dispatch({ type: "FETCH_ACRONYMS", acronyms: data });
       });
   };
 };
@@ -36,9 +36,8 @@ export const fetchFavouriteAcronyms = () => {
   return dispatch => {
     fetch("http://localhost:3000/acronyms")
       .then(resp => resp.json())
-      .then(respJson => {
-        console.log(respJson);
-        dispatch({ type: "FETCH_FAVOURITE_ACRONYMS", acronyms: respJson });
+      .then(data => {
+        dispatch({ type: "FETCH_FAVOURITE_ACRONYMS", acronyms: data });
       });
   };
 };
