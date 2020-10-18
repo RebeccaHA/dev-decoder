@@ -26,14 +26,13 @@ const App = props => {
         <Route exact path="/acronyms" component={AcronymContainer} />
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/signup" component={SignupForm} />
+        {console.log(props)}
         <Route
           exact
           path="/favourites"
-          render={props => {
+          render={() => {
             if (props.loggedIn) {
-              return <FavouriteContainer {...props} />;
-            } else {
-              return <Redirect to="/login" />;
+              return <FavouriteContainer />;
             }
           }}
         />
