@@ -102,4 +102,21 @@ p {
     top: 5px;
     right: 5px;
   }
+
+  .home-box-title {
+    font-size: 25px;
+  }
+
+  .home-box-text {
+    font-size: 20px;
+  }
+
+  .centered {
+    background-color: black;
+    color: white;
+    margin-top: 100px;
+    width: 300px;
+    top: 23px;
+    height: 470px;
+  }
 }

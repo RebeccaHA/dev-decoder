@@ -19,7 +19,7 @@ import SignupForm from "./components/auth/SignupForm";
 const App = props => {
   return (
     <Router>
-      <div>
+      <div className="container">
         <NavBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/new" component={AcronymForm} />
