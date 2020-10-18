@@ -11,8 +11,7 @@ import Grid from "@material-ui/core/Grid";
 const LoginForm = props => {
   const [state, setState] = useState({
     email: "",
-    password: "",
-    password_confirmation: ""
+    password: ""
   });
 
   const handleSetFormData = e => {

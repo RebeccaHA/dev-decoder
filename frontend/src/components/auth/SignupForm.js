@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-// import {  } from "../../redux/AuthActions";
+import { SignUp } from "../../redux/AuthActions";
 import Input from "@material-ui/core/Input";
 import { Alert } from "@material-ui/lab";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
@@ -21,8 +21,7 @@ const SignupForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.LogIn(state);
-    props.history.push("/");
+    props.SignUp(state);
   };
 
   return (
@@ -56,12 +55,21 @@ const SignupForm = props => {
             className="form-input"
           />
           <br />
-
-          <Button type="submit">Login</Button>
+          <label className="form-label">Password Confirmation:</label>
+          <br />
+          <Input
+            type="text"
+            value={state.password_confirmation}
+            onChange={handleSetFormData}
+            name="password_confirmation"
+            className="form-input"
+          />
+          <br />
+          <Button type="submit">Sign Up</Button>
         </form>
       </Grid>
     </div>
   );
 };
 
-export default SignupForm;
+export default connect(null, { SignUp })(SignupForm);
