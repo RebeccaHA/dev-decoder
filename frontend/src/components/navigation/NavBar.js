@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import { connect } from "react-redux";
+import { logout } from "./redux/AuthActions";
 
 const NavBar = props => {
   return (
@@ -27,6 +28,9 @@ const NavBar = props => {
         <NavLink className="nav-link" to="/login">
           Login
         </NavLink>
+        <NavLink className="nav-link" to="" onClick={() => props.logout()}>
+          Log out
+        </NavLink>
       </div>
     </div>
   );
@@ -38,4 +42,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps, { logout })(NavBar);

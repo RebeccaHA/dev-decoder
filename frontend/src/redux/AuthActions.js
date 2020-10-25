@@ -58,3 +58,16 @@ export const checkLoggedIn = () => {
       });
   };
 };
+
+export const logout = () => {
+  return dispatch => {
+    return fetch("http://localhost:3000/logout", {
+      method: "DELETE",
+      credentials: "include"
+    }).then(resp =>
+      dispatch({
+        type: "LOGOUT"
+      })
+    );
+  };
+};
