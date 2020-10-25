@@ -43,3 +43,18 @@ export const LogIn = (user, history) => {
       });
   };
 };
+
+export const checkLoggedIn = () => {
+  return dispatch => {
+    return fetch("http://localhost:3000/logged_in", {
+      credentials: "include"
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        dispatch({
+          type: "SUCCESS",
+          payload: { loggedIn: data.logged_in, currentUser: data.user }
+        });
+      });
+  };
+};

@@ -15,8 +15,13 @@ import NavBar from "./components/navigation/NavBar";
 import "fontsource-roboto";
 import LoginForm from "./components/auth/LoginForm";
 import SignupForm from "./components/auth/SignupForm";
+import { useEffect } from "react";
+import { checkLoggedIn } from "./redux/AuthActions";
 
 const App = props => {
+  useEffect(() => {
+    props.checkLoggedIn();
+  }, []);
   return (
     <Router>
       <div className="container">
@@ -26,7 +31,6 @@ const App = props => {
         <Route exact path="/acronyms" component={AcronymContainer} />
         <Route exact path="/login" component={LoginForm} />
         <Route exact path="/signup" component={SignupForm} />
-        {console.log(props)}
         <Route
           exact
           path="/favourites"
@@ -47,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { checkLoggedIn })(App);
