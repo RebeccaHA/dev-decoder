@@ -1,8 +1,9 @@
 import React from "react";
+import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import { connect } from "react-redux";
-import { logout } from "./redux/AuthActions";
+import { logout } from "../../redux/AuthActions";
 
 const NavBar = props => {
   return (
@@ -17,9 +18,14 @@ const NavBar = props => {
           Acronyms
         </NavLink>
         {props.loggedIn ? (
-          <NavLink className="nav-link" to="/favourites">
-            Favourites
-          </NavLink>
+          <>
+            <NavLink className="nav-link" to="/favourites">
+              Favourites
+            </NavLink>
+            <NavLink className="nav-link" to="" onClick={() => props.logout()}>
+              Log out
+            </NavLink>
+          </>
         ) : null}
 
         <NavLink className="nav-link" to="/new">
@@ -27,9 +33,6 @@ const NavBar = props => {
         </NavLink>
         <NavLink className="nav-link" to="/login">
           Login
-        </NavLink>
-        <NavLink className="nav-link" to="" onClick={() => props.logout()}>
-          Log out
         </NavLink>
       </div>
     </div>
