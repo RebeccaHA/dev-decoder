@@ -26,13 +26,16 @@ const NavBar = props => {
               Log out
             </NavLink>
           </>
-        ) : null}
+        ) : (
+          <>
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+          </>
+        )}
 
         <NavLink className="nav-link" to="/new">
           Contribute acronym
-        </NavLink>
-        <NavLink className="nav-link" to="/login">
-          Login
         </NavLink>
       </div>
     </div>

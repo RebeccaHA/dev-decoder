@@ -1,6 +1,6 @@
 export const SignUp = (user, history) => {
   return dispatch => {
-    return fetch("http://localhost:3000/users", {
+    return fetch("https://limitless-citadel-06504.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -23,7 +23,7 @@ export const SignUp = (user, history) => {
 
 export const LogIn = (user, history) => {
   return dispatch => {
-    return fetch("http://localhost:3000/sessions", {
+    return fetch("https://limitless-citadel-06504.herokuapp.com/sessions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -46,7 +46,7 @@ export const LogIn = (user, history) => {
 
 export const checkLoggedIn = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/logged_in", {
+    return fetch("https://limitless-citadel-06504.herokuapp.com/logged_in", {
       credentials: "include"
     })
       .then(resp => resp.json())
@@ -61,7 +61,7 @@ export const checkLoggedIn = () => {
 
 export const logout = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/logout", {
+    return fetch("https://limitless-citadel-06504.herokuapp.com/logout", {
       method: "DELETE",
       credentials: "include"
     })

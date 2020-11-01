@@ -1,7 +1,7 @@
 export const addAcronym = acronym => {
   return dispatch => {
     console.log("c");
-    return fetch("http://localhost:3000/acronyms", {
+    return fetch("https://limitless-citadel-06504.herokuapp.com/acronyms", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -24,7 +24,7 @@ export const addAcronym = acronym => {
 
 export const fetchAcronyms = () => {
   return dispatch => {
-    fetch("http://localhost:3000/acronyms")
+    fetch("https://limitless-citadel-06504.herokuapp.com/acronyms")
       .then(resp => resp.json())
       .then(data => {
         dispatch({ type: "FETCH_ACRONYMS", acronyms: data });
@@ -34,7 +34,7 @@ export const fetchAcronyms = () => {
 
 export const fetchFavouriteAcronyms = () => {
   return dispatch => {
-    fetch("http://localhost:3000/acronyms")
+    fetch("https://limitless-citadel-06504.herokuapp.com/acronyms")
       .then(resp => resp.json())
       .then(data => {
         dispatch({ type: "FETCH_FAVOURITE_ACRONYMS", acronyms: data });
@@ -50,11 +50,14 @@ export const removeError = () => {
 
 export const favourite = acronym => {
   return dispatch => {
-    fetch(`http://localhost:3000/acronyms/${acronym.id}`, {
-      method: "PUT",
-      body: JSON.stringify(acronym),
-      headers: { "Content-Type": "application/json" }
-    })
+    fetch(
+      `https://limitless-citadel-06504.herokuapp.com/acronyms/${acronym.id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(acronym),
+        headers: { "Content-Type": "application/json" }
+      }
+    )
       .then(resp => resp.json())
       .then(data => {
         dispatch({ type: "FAVOURITE_ACRONYM", acronym: data });
@@ -64,11 +67,14 @@ export const favourite = acronym => {
 
 export const unfavourite = acronym => {
   return dispatch => {
-    fetch(`http://localhost:3000/acronyms/${acronym.id}`, {
-      method: "PUT",
-      body: JSON.stringify(acronym),
-      headers: { "Content-Type": "application/json" }
-    })
+    fetch(
+      `https://limitless-citadel-06504.herokuapp.com/acronyms/${acronym.id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(acronym),
+        headers: { "Content-Type": "application/json" }
+      }
+    )
       .then(resp => resp.json())
       .then(data => {
         dispatch({ type: "UNFAVOURITE_ACRONYM", acronym: data });

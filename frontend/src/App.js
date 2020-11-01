@@ -37,6 +37,8 @@ const App = props => {
           render={() => {
             if (props.loggedIn) {
               return <FavouriteContainer />;
+            } else {
+              return <Redirect to="/" />;
             }
           }}
         />
